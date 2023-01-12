@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-
-// importing npm packages
+const port = process.env.PORT || 3000;
 const cors = require('cors');
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
 const bodyparser = require('body-parser');
 
 // importing other modules as well as creating a instance of it to work with
@@ -22,6 +21,7 @@ db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
 
 // routes
 app.use(bodyparser.json());
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -109,7 +109,4 @@ app.delete('/movies/:id', (req, res) => {
     };
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-});
 
