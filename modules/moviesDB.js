@@ -63,6 +63,7 @@ module.exports = class MoviesDB {
       });
       db.once('open', () => {
         this.Movie = db.model("movies", movieSchema);
+        console.log("Connected to MongoDB");
         resolve();
       });
     });
