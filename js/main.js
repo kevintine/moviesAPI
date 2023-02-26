@@ -46,6 +46,7 @@ document.querySelectorAll('#tableBody').forEach((row) => {
             // populate the modal with the movie details
             document.querySelector('.modal-title').innerHTML = data.title
             document.querySelector('.modal-body').innerHTML = `
+            <img class="img-fluid w-100" src=${data.poster ? data.poster : "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"} alt="movie poster"><br><br>
             <strong>Directed By:</strong> ${data.directors.join(', ')}<br><br>
             <p>${data.plot ? data.plot : 'N/A'}</p>
             <strong>Cast:</strong> ${data.cast ? data.cast.join(', ') : 'N/A'}<br><br>
