@@ -1,7 +1,7 @@
 page_number = 1
 per_page = 10
 function loadMoveData(title = null){
-    url = "http://localhost:3000/movies?page=" + page_number + "&perPage=" + per_page
+    url = "https://tan-betta-tux.cyclic.app/movies?page=" + page_number + "&perPage=" + per_page
     if (title != null){
         url = url + "&title=" + title
     }
