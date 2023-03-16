@@ -71,6 +71,9 @@ document.getElementById("nextPage").addEventListener('click', (event) => {
     loadMoveData(document.querySelector('#content').value);
 });
 document.getElementById("previousPage").addEventListener('click', (event) => {
+    if (page_number == 1){
+        return
+    }
     // prevent the form from from 'officially' submitting
     event.preventDefault();
     // populate the posts table with the userId value
