@@ -39,7 +39,7 @@ document.querySelectorAll('#tableBody').forEach((row) => {
         // get the id of the row that was clicked
         movieId = e.target.parentNode.id
         // make a fetch request to the api to get the movie details
-        fetch("http://localhost:3000/movies/" + movieId)
+        fetch("https://tan-betta-tux.cyclic.app/movies/" + movieId)
             .then((res) => res.json())
             .then((data) => {
             console.log(data);
